@@ -50,11 +50,11 @@ $container['db'] = function ($container) use ($capsule) {
 session_start();
 
 
-$app->get('/', function(Request $request, Response $response, $args){
-    return $this->view->render($response, 'Accueil.html.twig');
-})->setName('accueil');
+// $app->get('/', function(Request $request, Response $response, $args){
+//     return $this->view->render($response, 'Accueil.html.twig');
+// })->setName('accueil');
 
-// $app->get('/playlist/creer', '\\app\\Controllers\\PlaylistController:accessCreationPlaylist')->setName('creerplaylist');
+$app->get('/', '\\app\\Controllers\\Controller:listeFleurs')->setName('allFleur');
 
 
 try {

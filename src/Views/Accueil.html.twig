@@ -1,4 +1,5 @@
-   
+{% extends 'Interface.html.twig' %}
+
 {% block stylesheets %}
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
  {# <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> #}
@@ -13,6 +14,8 @@
         <div class="col-md-12">
         <h4>Liste des fleurs</h4>
         <div class="table-responsive">
+
+       
 
                 
     <table id="mytable" class="table table-bordred table-striped">
@@ -51,7 +54,24 @@
     <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-info btn-s" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-qrcode"></span></button></p></td>
     </tr>
 
+    {% for flower in flowers %}
 
+    <tr>
+      <td><input type="checkbox" class="checkthis" /></td>
+      <td>{{flower.original_name}}</td>
+      <td>{{flower.name}}</td>
+      <td>{{flower.height}}</td>
+      <td>{{flower.nectar}}</td>
+      <td>{{flower.pollen}}</td>
+      <td>{{flower.miellat}}</td>
+      <td>{{flower.flowering}}</td>
+      <td>{{flower.location}}</td>
+      <td>{{flower.img}}</td>
+      <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-s" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+      <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-info btn-s" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-qrcode"></span></button></p></td>
+    </tr>
+
+    {% endfor %}
 
     </tbody>
         
