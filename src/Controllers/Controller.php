@@ -9,7 +9,8 @@ class Controller{
     }
 
     public function listeFleurs($request, $response){
-        $flowers = file_get_contents('http://www.ctrlouis.ovh:3000/flowers/');
+        $flowers = json_decode(file_get_contents('http://www.ctrlouis.ovh:3000/flowers/'));
+
         // var_dump($flowers);
         $this->container->view->render($response, "Accueil.html.twig", ['flowers' => $flowers]);
     }
