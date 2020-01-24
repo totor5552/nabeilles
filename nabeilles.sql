@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Client :  localhost:3306
--- Généré le :  Ven 24 Janvier 2020 à 13:40
+-- Généré le :  Ven 24 Janvier 2020 à 15:13
 -- Version du serveur :  5.7.28-0ubuntu0.18.04.4
 -- Version de PHP :  7.2.24-0ubuntu0.18.04.2
 
@@ -19,6 +19,19 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `nabeilles`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id_admin` int(11) NOT NULL,
+  `name_admin` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email_admin` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pass_admin` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -57,7 +70,7 @@ INSERT INTO `plant` (`id_plant`, `latin_name`, `french_name`, `size`, `definitio
 CREATE TABLE `user` (
   `id_user` int(11) NOT NULL,
   `name_user` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `firstname_user` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `pass_user` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `pseudo` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `level` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -66,12 +79,18 @@ CREATE TABLE `user` (
 -- Contenu de la table `user`
 --
 
-INSERT INTO `user` (`id_user`, `name_user`, `firstname_user`, `pseudo`, `level`) VALUES
-(1, 'Jean', 'Aiassez', 'xxAbeillexx', 1);
+INSERT INTO `user` (`id_user`, `name_user`, `pass_user`, `pseudo`, `level`) VALUES
+(1, 'Jean', '', 'xxAbeillexx', 1);
 
 --
 -- Index pour les tables exportées
 --
+
+--
+-- Index pour la table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`id_admin`);
 
 --
 -- Index pour la table `plant`
@@ -89,6 +108,11 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour les tables exportées
 --
 
+--
+-- AUTO_INCREMENT pour la table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT pour la table `plant`
 --
