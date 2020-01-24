@@ -1,0 +1,33 @@
+{
+    "name": "slim/slim-skeleton",
+    "description": "A Slim Framework skeleton application for rapid development",
+    "keywords": ["microframework", "rest", "router", "psr7"],
+    "homepage": "http://github.com/slimphp/Slim-Skeleton",
+    "require": {
+      "php": ">=7.1",
+      "ext-json": "*",
+      "fzaninotto/faker": "^1.8",
+      "illuminate/database": "~5.1",
+      "monolog/monolog": "^1.24",
+      "php-di/php-di": "^6.0",
+      "slim/flash": "^0.4.0",
+      "slim/psr7": "^0.5",
+      "slim/slim": "^3.12",
+      "slim/twig-view": "^2.5"
+    },
+    "autoload": {
+      "psr-0": {
+        "": "ext/"
+      },
+      "psr-4": {
+        "app\\": "src/"
+      }
+    },
+    "config": {
+      "process-timeout": 0,
+      "sort-packages": true,
+      "platform": {
+        "php": "7.2.19"
+      }
+    }
+   }
