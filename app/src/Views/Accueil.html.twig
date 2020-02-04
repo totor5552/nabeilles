@@ -45,7 +45,11 @@
       {# <td><input type="checkbox" class="checkthis" /></td> #}
       <td>{{flower.original_name}}</td>
       <td>{{flower.name}}</td>
+      {% if flower.height != NULL %}
       <td>{{flower.height}}m</td>
+      {% else %}
+      <td></td>
+      {% endif %}
       <td>{{flower.nectar}}</td>
       <td>{{flower.pollen}}</td>
       <td>{{flower.miellat}}</td>
@@ -67,7 +71,7 @@
       <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
       <h4 class="modal-title custom_align" id="Heading">Editer la plante</h4>
     </div>
-    <form action="/nabeille_site_web/flower/{{flower.id}}" method="POST">
+    <form action="/flower/{{flower.id}}" method="POST">
     {# <form action="/" method="POST"> #}
       <div class="modal-body">
         <div class="form-group">
@@ -194,7 +198,7 @@
         
 </table>
 
-<div class="clearfix"></div>
+{# <div class="clearfix"></div>
 <ul class="pagination pull-right">
   <li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
   <li class="active"><a href="#">1</a></li>
@@ -209,7 +213,7 @@
             
         </div>
 	</div>
-</div>
+</div> #}
 
 
 
