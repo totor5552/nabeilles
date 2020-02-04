@@ -13,10 +13,11 @@ class Controller{
         $this->container->view->render($response, "Accueil.html.twig", ['flowers' => $flowers]);
     }
 
-    public function EditFleur($request, $response){
+    public function editFleur($request, $response){
+        $flowers = json_decode(file_get_contents('http://www.ctrlouis.ovh:3000/flowers/'));
+        $this->container->view->render($response, "Accueil.html.twig", ['flowers' => $flowers]);
 
-
-
+/*
         $id = $_POST['id'];
         $original_name = $_POST['original_name'];
         $name = $_POST['name'];
@@ -29,8 +30,8 @@ class Controller{
         $points = $_POST['points'];
         $img = $_POST['img'];
         $id = $_POST['id'];
-
-        /*
+*/
+        
         $original_name = Slim::getInstance()->request->post('original_name');
         $name = Slim::getInstance()->request->post('name');
         $height = Slim::getInstance()->request->post('height');
@@ -41,7 +42,7 @@ class Controller{
         $location = Slim::getInstance()->request->post('location');
         $points = Slim::getInstance()->request->post('points');
         $img = Slim::getInstance()->request->post('img');
-        */
+        
 
 
         $flowerJson = json_encode(array(
@@ -73,7 +74,6 @@ class Controller{
 
         echo($flowerJson);
 
-       self::listeFleurs($request, $response);
     }
 
     public function impressionQRcode(){
