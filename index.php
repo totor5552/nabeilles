@@ -55,7 +55,8 @@ session_start();
 // })->setName('accueil');
 
 $app->get('/', '\\app\\Controllers\\Controller:listeFleurs')->setName('allFleur');
-
+// $app->post('/','\\app\\Controllers\\Controller:EditFleur')->setName('allFleur');
+$app->post('/flower/:id','\\app\\Controllers\\Controller:EditFleur');
 
 try {
     $app->run();
