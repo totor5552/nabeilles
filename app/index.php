@@ -47,7 +47,7 @@ $container['db'] = function ($container) use ($capsule) {
 session_start();
 
 $app->get('/', '\\app\\Controllers\\Controller:listeFleurs')->setName('allFleur');
-$app->get('/test', '\\app\\Controllers\\Controller:listeFleurs')->setName('allFleur');
+$app->get('/test', '\\app\\Controllers\\Test:Oui');
 $app->post('/flower/:id','\\app\\Controllers\\Controller:editFleur');
 
 try {
