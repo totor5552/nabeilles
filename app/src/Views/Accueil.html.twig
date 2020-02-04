@@ -157,10 +157,23 @@
       <div class="modal-body">
        
         <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> Voulez vous imprimer le QR-code?</div>
-        <div id="qrcode"></div>
-        <script type="text/javascript">
-    console.log('allo ?')
-    new QRCode(document.getElementById("qrcode"), "http://www.ctrlouis.ovh:3000/flowers/"{{flower.id}});
+         <canvas id="qr"></canvas>
+
+    <script src="src/Scripts/qrious.js"></script>
+    <script>
+      (function() {
+        var qr = new QRious({
+          element: document.getElementById('qr'),{
+            text: "http://www.ctrlouis.ovh:3000/flowers/1",
+            width: 128,
+	          height: 128,
+	          colorDark : "#000000",
+	          colorLight : "#ffffff",
+          	correctLevel : QRCode.CorrectLevel.H
+          }
+          
+        });
+      })();
     </script>
       </div>
         <div class="modal-footer ">
